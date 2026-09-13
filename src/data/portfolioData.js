@@ -15,7 +15,7 @@ export const personalInfo = {
 export const skillsData = [
   {
     category: "Programming Languages",
-    skills: ["JavaScript (ES6+)", "Python", "Java", "C", "HTML5", "CSS3", "SQL"]
+    skills: ["JavaScript (ES6+)", "Python", "Java", "PHP", "C", "HTML5", "CSS3", "SQL"]
   },
   {
     category: "Frontend & Mobile Development",
@@ -23,11 +23,11 @@ export const skillsData = [
   },
   {
     category: "Backend & APIs",
-    skills: ["Node.js", "Express.js", "Flask", "RESTful APIs", "WebSockets (Socket.IO)"]
+    skills: ["Node.js", "Express.js", "PHP (PDO)", "Flask", "RESTful APIs", "WebSockets (Socket.IO)"]
   },
   {
     category: "Databases & Cloud",
-    skills: ["MongoDB", "SQLite", "Firebase (Authentication, Hosting)", "ThingSpeak"]
+    skills: ["MongoDB", "MySQL", "SQLite", "Firebase (Authentication, Hosting)", "ThingSpeak"]
   },
   {
     category: "Core Domains",
@@ -63,6 +63,35 @@ export const projectsData = [
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80",
     liveUrl: "",
     githubUrl: "https://github.com/YenuliMunasinghe",
+    featured: true
+  },
+  {
+    id: "myblog",
+    title: "MyBlog — Security-Hardened PHP & MySQL Blogging Platform",
+    category: "Full Stack Web",
+    shortDescription: "A full-stack, security-hardened blogging platform built with PHP (PDO), MySQL, HTML5/CSS3 glassmorphism UI, and Vanilla JS. Features CSRF protection, HMAC SHA-256 remember-me cookies, asynchronous AJAX liking, markdown rendering, and dynamic reading time badges.",
+    tags: ["PHP", "MySQL", "PDO", "JavaScript", "AJAX", "CSS Glassmorphism", "Markdown", "CSRF Defense", "HMAC Cookies"],
+    contributions: [
+      {
+        title: "Authentication & Session Hardening",
+        detail: "Implemented session fixation defense, password Bcrypt hashing, and tamper-proof HMAC SHA-256 signatures for Remember Me cookies."
+      },
+      {
+        title: "Multi-Layer Security Controls",
+        detail: "Enforced mandatory anti-CSRF token verification, PDO prepared statements, binary MIME type upload verification, and script execution lockdown via .htaccess."
+      },
+      {
+        title: "Asynchronous Liking & Dynamic Engine",
+        detail: "Engineered non-blocking AJAX post liking with immediate state updates, custom lightweight XSS-safe Markdown parsing, and dynamic word-count reading time calculation."
+      },
+      {
+        title: "Glassmorphic UI & Card Animations",
+        detail: "Designed a responsive dark-themed user interface featuring sticky glassmorphic navigation, image hover zoom effects, and glowing neon card accents."
+      }
+    ],
+    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80",
+    liveUrl: "",
+    githubUrl: "https://github.com/YenuliMunasinghe/myblog",
     featured: true
   },
   {

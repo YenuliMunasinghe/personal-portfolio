@@ -10,9 +10,10 @@ export default function Projects() {
     const t = title.toLowerCase();
     if (t.includes('map') || t.includes('geospatial')) return <MapPin className="text-blue-400 w-4 h-4" />;
     if (t.includes('database') || t.includes('query') || t.includes('api')) return <Database className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dispatch') || t.includes('real-time') || t.includes('telemetry') || t.includes('firmware')) return <Zap className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dashboard') || t.includes('visualization')) return <Layout className="text-blue-400 w-4 h-4" />;
+    if (t.includes('dispatch') || t.includes('real-time') || t.includes('telemetry') || t.includes('firmware') || t.includes('engine')) return <Zap className="text-blue-400 w-4 h-4" />;
+    if (t.includes('dashboard') || t.includes('visualization') || t.includes('ui') || t.includes('glassmorphic')) return <Layout className="text-blue-400 w-4 h-4" />;
     if (t.includes('embedded') || t.includes('fail-safe')) return <Cpu className="text-blue-400 w-4 h-4" />;
+    if (t.includes('security') || t.includes('auth') || t.includes('hardening')) return <ShieldAlert className="text-blue-400 w-4 h-4" />;
     return <Sparkles className="text-blue-400 w-4 h-4" />;
   };
 
