@@ -8,6 +8,7 @@ export const personalInfo = {
   email: "yenulimunasinghe04@gmail.com",
   github: "https://github.com/YenuliMunasinghe",
   linkedin: "https://www.linkedin.com/in/yenuli-munasinghe-6b6327354/",
+  medium: "https://medium.com/@yenulimunasinghe04",
   resumeUrl: "#",
   profileImg: "/profile.jpg",
 };

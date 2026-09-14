@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import MediumIcon from './icons/MediumIcon';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Footer() {
@@ -32,6 +33,15 @@ export default function Footer() {
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
+            </a>
+            <a
+              href={personalInfo.medium}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-500 hover:text-emerald-400 transition-colors"
+              aria-label="Medium"
+            >
+              <MediumIcon className="w-4 h-4" />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}

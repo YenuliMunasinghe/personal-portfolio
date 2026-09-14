@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Send, Github, Linkedin, Check } from 'lucide-react';
+import MediumIcon from './icons/MediumIcon';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
@@ -47,7 +48,7 @@ export default function Contact() {
           {/* Direct handles */}
           <div className="md:col-span-5 space-y-4">
             <p className="text-sm text-[#a1a1aa] leading-relaxed font-light">
-              Feel free to send a message using the form or connect directly through email, GitHub, or LinkedIn.
+              Feel free to send a message using the form or connect directly through email, GitHub, LinkedIn, or Medium.
             </p>
 
             <div className="space-y-3 pt-2 font-mono text-xs">
@@ -79,6 +80,18 @@ export default function Contact() {
                 <Linkedin className="w-4 h-4 text-blue-400 shrink-0" />
                 <span className="break-all">linkedin.com/in/yenuli-munasinghe-6b6327354</span>
               </a>
+
+              {personalInfo.medium && (
+                <a
+                  href={personalInfo.medium}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-[#a1a1aa] hover:text-emerald-400 transition-colors"
+                >
+                  <MediumIcon className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span className="break-all">{personalInfo.medium.replace(/^https?:\/\/(www\.)?/, '')}</span>
+                </a>
+              )}
             </div>
           </div>
 

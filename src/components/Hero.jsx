@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Mail, Check, Copy, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Check, Copy } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Hero() {
