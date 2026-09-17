@@ -16,15 +16,15 @@ An interactive, high-performance web portfolio built with **React 19**, **Vite 7
 
 | Hero & Intro | Featured Engineering Projects |
 | :---: | :---: |
-| ![Hero Section](public/screenshots/hero-section.png) | ![Projects Section](public/screenshots/projects-section.png) |
+| <img src="public/screenshots/hero-section.png" width="450" /> | <img src="public/screenshots/projects-section.png" width="450" /> |
 
 | Skills & Expertise | Academic Education |
 | :---: | :---: |
-| ![Skills & Expertise](public/screenshots/skills-section.png) | ![Education Section](public/screenshots/education-section.png) |
+| <img src="public/screenshots/skills-section.png" width="450" /> | <img src="public/screenshots/education-section.png" width="450" /> |
 
 | Let's Connect (Contact) |
 | :---: |
-| ![Contact Section](public/screenshots/contact-section.png) |
+| <img src="public/screenshots/contact-section.png" width="500" /> |
 
 ---
 
