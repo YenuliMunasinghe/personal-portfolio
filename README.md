@@ -14,13 +14,17 @@ An interactive, high-performance web portfolio built with **React 19**, **Vite 7
 
 ## 📸 Screenshots & Preview
 
-| Hero & Intro | Featured Projects |
+| Hero & Intro | Featured Engineering Projects |
 | :---: | :---: |
-| ![Hero Section](public/screenshots/hero-preview.svg) | ![Projects Section](public/screenshots/projects-preview.svg) |
+| ![Hero Section](public/screenshots/hero-section.png) | ![Projects Section](public/screenshots/projects-section.png) |
 
-| Skills & Experience | Interactive Project Modal |
+| Skills & Expertise | Academic Education |
 | :---: | :---: |
-| ![Skills & Experience](public/screenshots/skills-preview.svg) | ![Project Modal](public/screenshots/modal-preview.svg) |
+| ![Skills & Expertise](public/screenshots/skills-section.png) | ![Education Section](public/screenshots/education-section.png) |
+
+| Let's Connect (Contact) |
+| :---: |
+| ![Contact Section](public/screenshots/contact-section.png) |
 
 ---
 
