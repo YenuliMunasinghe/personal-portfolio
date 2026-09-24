@@ -14,5 +14,7 @@ describe('App Component', () => {
     render(<App />);
     expect(screen.getByText(/A detailed look at my systems projects and contributions/i)).toBeInTheDocument();
     expect(screen.getByText(/StrayCare — Stray Animal Reporting & Live Tracking Platform/i)).toBeInTheDocument();
+    expect(screen.getByText(/Writing & Thoughts/i)).toBeInTheDocument();
+    expect(screen.getByText(/Competitions & Volunteering/i)).toBeInTheDocument();
   });
 });

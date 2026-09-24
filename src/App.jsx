@@ -4,8 +4,10 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Writing from './components/Writing';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
+import Involvement from './components/Involvement';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -24,8 +26,10 @@ export default function App() {
         <About />
         <Skills />
         <Projects />
+        <Writing />
         <Experience />
         <Certifications />
+        <Involvement />
         <Contact />
       </main>
 

@@ -8,13 +8,15 @@ export default function Navbar() {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Writing', href: '#writing' },
     { name: 'Education', href: '#education' },
+    { name: 'Activities', href: '#activities' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[650px]">
-      <div className="rounded-2xl bg-zinc-900/90 backdrop-blur-xl border border-zinc-800/80 px-6 py-3 shadow-xl shadow-black/30">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[760px]">
+      <div className="rounded-2xl bg-zinc-900/90 backdrop-blur-xl border border-zinc-800/80 px-5 sm:px-6 py-3 shadow-xl shadow-black/30">
         <div className="flex items-center justify-between">
           
           {/* Logo */}
@@ -23,7 +25,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4 lg:gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}

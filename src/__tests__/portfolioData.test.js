@@ -5,6 +5,9 @@ import {
   projectsData,
   educationData,
   certificationsData,
+  articlesData,
+  competitionsData,
+  volunteeringData,
 } from '../data/portfolioData';
 
 describe('portfolioData integrity tests', () => {
@@ -41,5 +44,29 @@ describe('portfolioData integrity tests', () => {
     expect(educationData.length).toBeGreaterThan(0);
     expect(Array.isArray(certificationsData)).toBe(true);
     expect(certificationsData.length).toBeGreaterThan(0);
+  });
+
+  it('should contain articles, competitions, and volunteering datasets', () => {
+    expect(Array.isArray(articlesData)).toBe(true);
+    expect(articlesData.length).toBeGreaterThan(0);
+    articlesData.forEach((article) => {
+      expect(article.id).toBeDefined();
+      expect(article.title).toBeDefined();
+      expect(article.link).toBeDefined();
+    });
+
+    expect(Array.isArray(competitionsData)).toBe(true);
+    expect(competitionsData.length).toBeGreaterThan(0);
+    competitionsData.forEach((comp) => {
+      expect(comp.title).toBeDefined();
+      expect(comp.organizer).toBeDefined();
+    });
+
+    expect(Array.isArray(volunteeringData)).toBe(true);
+    expect(volunteeringData.length).toBeGreaterThan(0);
+    volunteeringData.forEach((vol) => {
+      expect(vol.role).toBeDefined();
+      expect(vol.organization).toBeDefined();
+    });
   });
 });

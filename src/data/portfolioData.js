@@ -6,10 +6,11 @@ export const personalInfo = {
   bio: "I am a 3rd-year Information Technology & Management undergraduate at the University of Moratuwa with a strong interest in Software Engineering, Data Science, and the Business side. Driven by a multidisciplinary mindset, I build scalable full-stack and mobile solutions, leverage data-driven insights, and understand core business operations. Passionate about clean architecture, system design, and practical innovation, I am currently seeking an opportunity to apply my academic foundation, gain hands-on industry experience, and contribute to high-impact real-world projects.",
   availability: "Open to internships and software engineering opportunities",
   email: "yenulimunasinghe04@gmail.com",
+  phone: "+94 707 400 638",
   github: "https://github.com/YenuliMunasinghe",
   linkedin: "https://www.linkedin.com/in/yenuli-munasinghe-6b6327354/",
   medium: "https://medium.com/@yenulimunasinghe04",
-  resumeUrl: "#",
+  resumeUrl: "/Yenuli_Munasinghe_CV.pdf",
   profileImg: "/profile.jpg",
 };
 
@@ -157,3 +158,88 @@ export const certificationsData = [
     link: "https://www.coursera.org/"
   }
 ];
+
+
+// Technical articles, dev logs, and engineering thoughts published on Medium
+export const articlesData = [
+  {
+    id: "finflow-dev-series",
+    title: "Building FinFlow: Daily Development Series",
+    category: "DevLog Series",
+    description: "An ongoing daily series chronicling the system architecture, full-stack milestones, and real-time engineering decisions while developing the FinFlow platform.",
+    readTime: "Multi-part Series",
+    tags: ["FinFlow", "Daily DevLog", "System Design", "Full-Stack"],
+    link: "https://medium.com/@yenulimunasinghe04",
+    featured: true,
+    episodes: [
+      {
+        day: "Day 01",
+        title: "Project Scoping, Architecture & Core Tech Stack",
+        link: "https://medium.com/@yenulimunasinghe04/development-journey-of-finflow-building-a-financial-management-system-for-university-societies-2e2f0b4a6a1b",
+      },
+      {
+        day: "Day 02",
+        title: "Database Design & Backend Service Integration",
+        link: "https://medium.com/@yenulimunasinghe04/day-2-designing-the-database-and-security-foundation-0d0581df8553",
+      },
+      {
+        day: "Day 03",
+        title: "Frontend UI, State Workflows & Sprint Reflections",
+        link: "https://medium.com/@yenulimunasinghe04/day-3-connecting-events-budgets-and-transactions-39331f7b5be5",
+      }
+    ]
+  }
+];
+
+// Competitions and Hackathons
+export const competitionsData = [
+  {
+    id: "J'puraXtreme 2.0",
+    title: "J'puraXtreme 2025",
+    organizer: "Organized by IEEE Computer Society Student Branch Chapter.",
+    period: "Oct 2025",
+    description: "Participated in the annual competitive programming challenge organized by the IEEE Computer Society Student Branch Chapter of the University of Sri Jayewardenepura.",
+    tags: ["Hackathon", "Team Pitch"]
+  },
+  {
+    id: "Code Rush",
+    title: "Code Rush",
+    organizer: "Organized by INTECS of Faculty of Information Technology, University of Moratuwa",
+    period: "2024",
+    description: "Participated in a fast-paced coding marathon and ideathon organized by INTECS, focusing on algorithmic problem solving and rapid software conceptualization.",
+    tags: ["Team Work", "Hackerthon"]
+
+  }
+];
+
+// Volunteering and Leadership initiatives
+// (Placeholder content — update with your original volunteering roles and organizations)
+export const volunteeringData = [
+  {
+    id: "Volunteer-FINC 2025",
+    role: "Organized by IEEE Student Branch",
+    organization: "FINC 2025 - Delegates Committee Member",
+    period: "2025- July",
+    description: "Contributed as a volunteer for Future Innovators Challenge 2025, organized by the IEEE Student Branch in collaboration with the IEEE Industrial Electronics Society Student Branch Chapter of the University of Moratuwa.",
+    tags: ["Event Management", "Volunteering"]
+  },
+
+  {
+    id: "Volunteer-Road to Legacy 2.0",
+    role: "Organized by IEEE Student Branch",
+    organization: "Road to Legacy 2.0 - Delegates Committee Member",
+    period: "2025",
+    description: "Contributed as a volunteer for the event RTL 2.0 which is a collobarative event for tech students with industry experts .",
+    tags: ["Delegates Management", "Volunteering"]
+  },
+
+  {
+    id: "Member-Moraspirit",
+    role: "Moraspirit",
+    organization: "Member of Web and Technology Pillar",
+    period: "2025 – 2026",
+    description: "Contributed to the UI/UX design of the Moraspirit website.",
+    tags: ["Web & Technology", "volunteering"]
+  }
+];
+

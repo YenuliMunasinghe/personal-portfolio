@@ -87,3 +87,68 @@ input:user-invalid, textarea:user-invalid {
 input:user-valid, textarea:user-valid {
   border-color: #10b981 !important;
 }
+
+/* Hero Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.06);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 6s ease-in-out infinite 1.5s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 24s linear infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 4s ease-in-out infinite;
+}
+
+/* Subtle modern perspective grid for hero */
+.hero-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, #000 50%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 50%, #000 50%, transparent 100%);
+}
