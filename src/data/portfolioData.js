@@ -12,6 +12,7 @@ export const personalInfo = {
   medium: "https://medium.com/@yenulimunasinghe04",
   resumeUrl: "/Yenuli_Munasinghe_CV.pdf",
   profileImg: "/profile.jpg",
+  formspreeId: "", // Optional: paste your Formspree Form ID here or in .env as VITE_FORMSPREE_FORM_ID
 };
 
 export const skillsData = [
@@ -42,36 +43,50 @@ export const projectsData = [
     id: "straycare",
     title: "StrayCare — Stray Animal Reporting & Live Tracking Platform",
     category: "Full Stack & Mobile",
-    shortDescription: "A monorepo platform comprising an Expo/React Native mobile app, React web admin dashboard, and Node.js REST API designed to streamline stray animal reporting, real-time map tracking, and emergency rescue workflows.",
-    tags: ["React Native", "Expo", "React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Google Maps API", "Expo Push API"],
+    projectType: "Team Project (TeamTechForge)",
+    shortDescription: "A comprehensive rescue ecosystem with React Native mobile app, web admin dashboard, and REST API connecting reporters, volunteers, and shelters for live map-based stray reporting and rescue operations.",
+    fullDescription: "StrayCare is an end-to-end community rescue and dispatch platform that creates a connected rescue-case lifecycle—from initial stray animal reporting and interactive map discovery to rescue acceptance, structured status management, adoption handoff, and real-time reporter notifications. I was primarily responsible for the design and implementation of the Stray Reporting, Map-Based Rescue Operation, Rescuer Case Management, Adoption Handoff, and Notification modules across both mobile frontend and backend APIs.",
+    myContributionSummary: "Spearheaded the design and implementation of 5 core modules: multi-step mobile reporting with anonymous submission, interactive map-based rescue discovery with status markers, rescuer case management with lifecycle progression, automated adoption handoff with form prefilling, and an end-to-end in-app/push notification system.",
+    tags: ["React Native", "Expo", "React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "React Native Maps", "Expo Push API"],
     contributions: [
       {
-        title: "Reporting & Map Visualization",
-        detail: "Engineered end-to-end stray animal reporting flows and interactive live map visualization."
+        title: "Multi-Step Stray Animal Reporting Workflow",
+        detail: "Engineered mobile reporting workflow with animal details, location selection via React Native Maps, image upload, review, submission feedback, and anonymous reporting support."
       },
       {
-        title: "Geospatial Query Optimization",
-        detail: "Optimized map query speeds and payload delivery utilizing MongoDB 2DSphere geospatial indexing and field projections."
+        title: "Map-Based Rescue Operation & Case Acceptance",
+        detail: "Built interactive map with status-based markers, case detail modal with timeline history, and Accept Case functionality with permission checks preventing self-acceptance or unauthorized role access."
       },
       {
-        title: "Atomic State Machine",
-        detail: "Built a sequential rescue state machine backed by atomic database concurrency control to prevent race conditions during case assignments."
+        title: "Rescuer-Side Case Management & Status Progression",
+        detail: "Implemented active rescue case cards in rescuer profile, return navigation flow, structured status updates (Under Rescue → Treated → Ready for Adoption), assigned-rescuer locking, and Mark as Failed action."
       },
       {
-        title: "Real-time Dispatch & Alerts",
-        detail: "Integrated Socket.IO WebSockets for bi-directional live dispatch updates and Expo Push API for real-time mobile notifications."
+        title: "Adoption Handoff & Automated Prefilling",
+        detail: "Connected rescue workflow to adoption onboarding, passing case IDs from Treated to Ready for Adoption to automatically prefill existing animal report details and eliminate duplicate data entry."
+      },
+      {
+        title: "In-App Notification Centre & Expo Push System",
+        detail: "Integrated in-app notification center, Expo push token registration with duplicate protection, backend push delivery, and automated triggers for case acceptance, status updates, completion, and adoption readiness."
+      },
+      {
+        title: "Backend APIs, Authorization & Test Validation",
+        detail: "Developed REST APIs for reporting, case retrieval, and timeline tracking with role-based authorization. Added automated test coverage for adoption prefilling and rescue outcome workflows."
       }
     ],
     image: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=80",
     liveUrl: "",
-    githubUrl: "https://github.com/YenuliMunasinghe",
+    githubUrl: "https://github.com/TeamTechForge",
     featured: true
   },
   {
     id: "myblog",
     title: "MyBlog — Security-Hardened PHP & MySQL Blogging Platform",
     category: "Full Stack Web",
-    shortDescription: "A full-stack, security-hardened blogging platform built with PHP (PDO), MySQL, HTML5/CSS3 glassmorphism UI, and Vanilla JS. Features CSRF protection, HMAC SHA-256 remember-me cookies, asynchronous AJAX liking, markdown rendering, and dynamic reading time badges.",
+    projectType: "Individual Project",
+    shortDescription: "A full-stack, security-hardened blogging platform built with PHP (PDO), MySQL, HTML5/CSS3 glassmorphism UI, and Vanilla JS. Features CSRF protection, HMAC SHA-256 remember-me cookies, asynchronous AJAX liking, and markdown rendering.",
+    fullDescription: "MyBlog is an individual, zero-dependency, security-first blogging platform engineered to demonstrate robust defensive architecture against the OWASP Top 10 vulnerabilities. Implemented using object-oriented PHP with PDO and MySQL, the application enforces cryptographic anti-CSRF tokens across all mutating actions, prevents session hijacking and fixation via strict session regeneration, and deploys tamper-proof HMAC SHA-256 cookie signatures. The front-end features a sleek dark glassmorphic design, asynchronous AJAX liking without page refreshes, and client-side safe Markdown parsing.",
+    myContributionSummary: "Architected and developed the entire application end-to-end as an individual project: security architecture, database schema, session hardening, asynchronous liking engine, and glassmorphic UI.",
     tags: ["PHP", "MySQL", "PDO", "JavaScript", "AJAX", "CSS Glassmorphism", "Markdown", "CSRF Defense", "HMAC Cookies"],
     contributions: [
       {
@@ -91,7 +106,7 @@ export const projectsData = [
         detail: "Designed a responsive dark-themed user interface featuring sticky glassmorphic navigation, image hover zoom effects, and glowing neon card accents."
       }
     ],
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=80",
+    image: "/myblog.png",
     liveUrl: "",
     githubUrl: "https://github.com/YenuliMunasinghe/myblog",
     featured: true
@@ -100,25 +115,32 @@ export const projectsData = [
     id: "server-room-monitor",
     title: "Smart Server Room Monitoring & Automation System",
     category: "IoT & Full Stack",
-    shortDescription: "An end-to-end IoT monitoring and alerting system engineered to track server environment metrics, automate thermal regulation, and trigger fail-safe emergency notifications.",
-    tags: ["ESP32", "C++", "React.js", "Node.js", "Firebase", "ThingSpeak API", "SIM800L GSM", "DHT22", "SGP30"],
+    projectType: "Academic Systems Project",
+    shortDescription: "An automated server room monitoring system tracking temperature, humidity, and AC status in real-time via ESP32, ThingSpeak cloud telemetry, and a Firebase-hosted web dashboard.",
+    fullDescription: "The Server Room Monitoring System addresses the critical need for efficient and automated monitoring of server room conditions. This system is designed to track temperature, humidity, and server status in real-time, providing alerts and updates via a web interface and SMS notifications. Additionally, it automates air conditioning schedules to optimize energy usage and ensure system reliability. By leveraging a microcontroller-based design with cost-effective components, our solution enhances server room management and reduces manual intervention.",
+    myContributionSummary: "Directly programmed the dual LDR sensors (GPIO36/GPIO39) and SGP30 air quality sensor (I²C) on the ESP32, transmitted telemetry to ThingSpeak, built and hosted the front-end dashboard on Firebase Hosting, and implemented Firebase Authentication.",
+    tags: ["ESP32", "C++", "SGP30 (I²C)", "LDR (ADC)", "ThingSpeak API", "Firebase Hosting", "Firebase Auth", "HTML/JS"],
     contributions: [
       {
-        title: "Embedded Telemetry Firmware",
-        detail: "Programmed ESP32 embedded firmware to gather real-time air quality (SGP30), temperature/humidity (DHT22), and light intensity telemetry."
+        title: "Programming LDR Sensors (AC Status Monitoring)",
+        detail: "Programmed two LDR sensors connected to ESP32 ADC pins (GPIO36/ADC0, GPIO39/ADC1) to detect AC indicator bulb brightness, reading continuous analog values and transmitting AC operational state to ThingSpeak via Write API."
       },
       {
-        title: "Autonomous Fail-Safe Logic",
-        detail: "Configured autonomous AC trigger logic and emergency GSM SMS alerts via the SIM800L module for fail-safe operations."
+        title: "Programming SGP30 Air Quality Sensor",
+        detail: "Interfaced SGP30 sensor with ESP32 via I²C (SDA to GPIO21, SCL to GPIO22, 3.3V) in Indoor Air Quality (IAQ) mode, validating sensor availability, sampling eCO₂ and TVOC, and streaming telemetry to ThingSpeak."
       },
       {
-        title: "Real-time Dashboard",
-        detail: "Built and deployed a secure React and Node.js monitoring dashboard on Firebase Hosting with live global telemetry feeds."
+        title: "Hosting Front-End Dashboard using Firebase",
+        detail: "Developed a web-based dashboard fetching real-time telemetry from ThingSpeak fields and deployed it using the Firebase CLI to Firebase Hosting, enabling remote centralized environmental observation."
+      },
+      {
+        title: "Login Authentication using Firebase Auth",
+        detail: "Implemented user authentication with email/password sign-in and session management via Firebase Auth APIs, securing access to the web dashboard and protecting sensitive server room environmental data."
       }
     ],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80",
+    image: "/server-room-monitor.jpg",
     liveUrl: "",
-    githubUrl: "https://github.com/YenuliMunasinghe",
+    githubUrl: null,
     featured: true
   }
 ];

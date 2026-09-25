@@ -1,112 +1,138 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Sparkles, MapPin, Database, Zap, Layout, Cpu, ShieldAlert, Radio } from 'lucide-react';
+import { Github, Sparkles, ArrowRight, FolderGit2 } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 
 export default function Projects() {
   const [activeModalProject, setActiveModalProject] = useState(null);
 
-  const getContribIcon = (title) => {
-    const t = title.toLowerCase();
-    if (t.includes('map') || t.includes('geospatial')) return <MapPin className="text-blue-400 w-4 h-4" />;
-    if (t.includes('database') || t.includes('query') || t.includes('api')) return <Database className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dispatch') || t.includes('real-time') || t.includes('telemetry') || t.includes('firmware') || t.includes('engine')) return <Zap className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dashboard') || t.includes('visualization') || t.includes('ui') || t.includes('glassmorphic')) return <Layout className="text-blue-400 w-4 h-4" />;
-    if (t.includes('embedded') || t.includes('fail-safe')) return <Cpu className="text-blue-400 w-4 h-4" />;
-    if (t.includes('security') || t.includes('auth') || t.includes('hardening')) return <ShieldAlert className="text-blue-400 w-4 h-4" />;
-    return <Sparkles className="text-blue-400 w-4 h-4" />;
-  };
-
   return (
     <section id="projects" className="py-[60px] md:py-[120px] px-4 md:px-6">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-14 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-300 uppercase tracking-wider mb-4">
+            <FolderGit2 className="w-3.5 h-3.5" />
+            <span>Featured Engineering</span>
+          </div>
+
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-[#fafafa]">
             Projects<span className="text-blue-500">.</span>
           </h2>
-          <p className="mt-3 text-lg text-[#a1a1aa]">A detailed look at my systems projects and contributions</p>
+          <p className="mt-3 text-base sm:text-lg text-[#a1a1aa] max-w-xl mx-auto">
+            A detailed look at my systems projects and contributions
+          </p>
         </div>
 
-        {/* Projects Grid Stack */}
-        <div className="space-y-12">
+        {/* Projects Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projectsData.map((project) => (
             <div 
               key={project.id}
-              className="group rounded-xl glass p-6 transition-all duration-300 glass-hover hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] w-full"
+              role="button"
+              tabIndex={0}
+              onClick={() => setActiveModalProject(project)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setActiveModalProject(project);
+                }
+              }}
+              className="group relative flex flex-col justify-between rounded-2xl glass p-5 sm:p-6 transition-all duration-300 glass-hover hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(59,130,246,0.18)] cursor-pointer border border-white/[0.08] hover:border-blue-500/40 text-left focus:outline-none focus:ring-2 focus:ring-blue-500/50"
             >
-              
-              {/* Title & Header */}
-              <div className="mb-6">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-2xl font-bold text-[#fafafa] group-hover:text-blue-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  {project.featured && (
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] font-mono text-blue-300 uppercase tracking-wide">
-                      <Sparkles className="w-2.5 h-2.5" /> Featured
+              <div>
+                {/* Project Image Banner */}
+                {project.image && (
+                  <div className="relative h-44 sm:h-48 w-full overflow-hidden rounded-xl bg-zinc-900 mb-4">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/20 to-transparent" />
+                    
+                    {/* Category Tag */}
+                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-black/75 backdrop-blur-md border border-white/10 text-[10px] font-mono text-blue-300 uppercase tracking-wider font-medium">
+                      {project.category}
+                    </span>
+
+                    {/* Featured Tag */}
+                    {project.featured && (
+                      <span className="absolute top-3 right-3 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-500/25 backdrop-blur-md border border-blue-500/35 text-[10px] font-mono text-blue-300 font-medium">
+                        <Sparkles className="w-2.5 h-2.5 text-blue-400" />
+                        Featured
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-blue-400 transition-colors leading-snug line-clamp-2">
+                  {project.title}
+                </h3>
+
+                {/* Short Description */}
+                <p className="mt-2.5 text-xs sm:text-sm text-[#a1a1aa] font-light leading-relaxed line-clamp-3">
+                  {project.shortDescription}
+                </p>
+
+                {/* Architectural Highlights Pill */}
+                {project.contributions && project.contributions.length > 0 && (
+                  <div className="mt-3 flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                    <span>{project.contributions.length} architectural contributions</span>
+                  </div>
+                )}
+
+                {/* Technology Tags */}
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {project.tags.slice(0, 3).map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[10px] font-mono text-zinc-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                  {project.tags.length > 3 && (
+                    <span className="rounded-full border border-white/5 bg-white/[0.03] px-2 py-0.5 text-[10px] font-mono text-zinc-500">
+                      +{project.tags.length - 3}
                     </span>
                   )}
                 </div>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#a1a1aa] font-light">
-                  {project.shortDescription}
-                </p>
               </div>
 
-              {/* Contributions Details Grid */}
-              <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {project.contributions.map((contrib, idx) => (
-                  <div 
-                    key={idx}
-                    className="flex items-start gap-3 rounded-lg bg-white/[0.02] border border-white/[0.05] p-4 transition-colors hover:bg-white/[0.04]"
-                  >
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-blue-500/10">
-                      {getContribIcon(contrib.title)}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-[#fafafa]">{contrib.title}</p>
-                      <p className="mt-1 text-xs leading-relaxed text-[#a1a1aa] font-light">{contrib.detail}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Tags */}
-              <div className="mb-6 flex flex-wrap gap-2">
-                {project.tags.map((tag, idx) => (
-                  <span 
-                    key={idx}
-                    className="rounded-full border px-3 py-1 text-xs font-mono border-white/10 bg-white/5 text-[#a1a1aa]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Actions */}
-              <div className="flex flex-wrap gap-4 border-t border-zinc-800/80 pt-4">
+              {/* Card Footer Actions */}
+              <div className="mt-6 pt-4 border-t border-zinc-800/80 flex items-center justify-between">
                 <button
-                  onClick={() => setActiveModalProject(project)}
-                  className="flex items-center gap-1.5 text-sm text-[#a1a1aa] hover:text-blue-400 transition-colors"
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setActiveModalProject(project);
+                  }}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-blue-400 group-hover:text-blue-300 transition-colors cursor-pointer"
+                  aria-label={`View more details about ${project.title}`}
                 >
-                  <ExternalLink className="w-4 h-4" />
-                  <span>Full Details & Contributions</span>
+                  <span>View more</span>
+                  <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
-                
+
                 {project.githubUrl && (
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-[#a1a1aa] hover:text-blue-400 transition-colors ml-4"
+                    onClick={(e) => e.stopPropagation()}
+                    className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+                    title="View GitHub Repository"
+                    aria-label={`GitHub Repository for ${project.title}`}
                   >
                     <Github className="w-4 h-4" />
-                    <span>GitHub Repository</span>
                   </a>
                 )}
               </div>
-
             </div>
           ))}
         </div>

@@ -24,9 +24,11 @@ The portfolio is architected as a **Single Page Application (SPA)** built with *
  ├─ Hero                                    └─ Tailwind CSS v3
  ├─ About
  ├─ Skills
- ├─ Experience
  ├─ Projects ──▶ [ ProjectModal ]
+ ├─ Writing
+ ├─ Experience
  ├─ Certifications
+ ├─ Involvement
  ├─ Contact
  └─ Footer
 ```
@@ -42,11 +44,13 @@ The portfolio is architected as a **Single Page Application (SPA)** built with *
 | **`Hero`** | [`src/components/Hero.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Hero.jsx) | Landing section presenting headline bio, key specializations, avatar photo, CTA buttons, and quick social links. |
 | **`About`** | [`src/components/About.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/About.jsx) | Professional biography, core values, location information, and academic background. |
 | **`Skills`** | [`src/components/Skills.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Skills.jsx) | Categorized grid displaying programming languages, mobile frameworks, databases, and core domains. |
-| **`Projects`** | [`src/components/Projects.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Projects.jsx) | Portfolio showcase with interactive category filtering and project preview cards. |
+| **`Projects`** | [`src/components/Projects.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Projects.jsx) | 3-column project card grid with "View more →" action and project type badges. |
 | **`ProjectModal`** | [`src/components/ProjectModal.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/ProjectModal.jsx) | High-detail modal displaying technical achievements, architectural breakdown, and repo links when a card is selected. |
+| **`Writing`** | [`src/components/Writing.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Writing.jsx) | Published technical articles, daily devlogs, and Medium series with direct links. |
 | **`Experience`** | [`src/components/Experience.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Experience.jsx) | Academic and leadership timeline highlighting degree milestones and practical experience. |
 | **`Certifications`**| [`src/components/Certifications.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Certifications.jsx) | Accredited industry certificates (Coursera, IBM) with verification links. |
-| **`Contact`** | [`src/components/Contact.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Contact.jsx) | Direct communication form, email button, location, and social media channels. |
+| **`Involvement`** | [`src/components/Involvement.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Involvement.jsx) | Filterable showcase of hackathons, competitions, and community leadership volunteering. |
+| **`Contact`** | [`src/components/Contact.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Contact.jsx) | Formspree-integrated communication form with fail-safe mailto fallback, email button, location, and social links. |
 | **`Footer`** | [`src/components/Footer.jsx`](file:///d:/Documents/GitHub/personal%20portfolio/src/components/Footer.jsx) | Copyright information, scroll-to-top button, and navigational summary. |
 
 ---

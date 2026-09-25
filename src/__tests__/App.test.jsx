@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import App from '../App';
 import React from 'react';
 
@@ -16,5 +16,25 @@ describe('App Component', () => {
     expect(screen.getByText(/StrayCare — Stray Animal Reporting & Live Tracking Platform/i)).toBeInTheDocument();
     expect(screen.getByText(/Writing & Thoughts/i)).toBeInTheDocument();
     expect(screen.getByText(/Competitions & Volunteering/i)).toBeInTheDocument();
+  });
+
+  it('renders project cards with view more buttons and opens detailed modal on click', () => {
+    render(<App />);
+
+    const viewMoreButtons = screen.getAllByRole('button', { name: /view more/i });
+    expect(viewMoreButtons.length).toBeGreaterThan(0);
+
+    // Click the first project card's "View more" button
+    fireEvent.click(viewMoreButtons[0]);
+
+    // Modal should appear with detailed section
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(screen.getByText(/Key Architectural Contributions/i)).toBeInTheDocument();
+
+    // Close button should close the modal
+    const closeButton = screen.getByRole('button', { name: /close modal/i });
+    fireEvent.click(closeButton);
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   });
 });
