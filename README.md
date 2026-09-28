@@ -19,13 +19,17 @@ An interactive, high-performance web portfolio engineered with **React 19**, **V
 | :---: | :---: |
 | <img src="public/screenshots/hero-section.png" width="450" alt="Hero Section" /> | <img src="public/screenshots/projects-section.png" width="450" alt="Projects Section" /> |
 
-| Technical Writing & Thoughts | Competitions & Volunteering |
+| Technical Writing & Thoughts | Verified Certifications |
 | :---: | :---: |
-| <img src="public/myblog.png" width="450" alt="MyBlog Platform" /> | <img src="public/server-room-monitor.jpg" width="450" alt="Server Room Monitor Hardware" /> |
+| <img src="public/screenshots/writing-section.png" width="450" alt="Technical Writing Section" /> | <img src="public/screenshots/certifications-section.png" width="450" alt="Certifications Section" /> |
 
-| Skills & Expertise | Academic Education |
+| Competitions & Volunteering | Academic Education |
 | :---: | :---: |
-| <img src="public/screenshots/skills-section.png" width="450" alt="Skills Section" /> | <img src="public/screenshots/education-section.png" width="450" alt="Education Section" /> |
+| <img src="public/screenshots/competitions-section.png" width="450" alt="Competitions and Volunteering Section" /> | <img src="public/screenshots/education-section.png" width="450" alt="Education Section" /> |
+
+| Skills & Expertise | Contact & Messaging |
+| :---: | :---: |
+| <img src="public/screenshots/skills-section.png" width="450" alt="Skills Section" /> | <img src="public/screenshots/contact-section.png" width="450" alt="Contact Section" /> |
 
 ---
 
@@ -46,9 +50,10 @@ An interactive, high-performance web portfolio engineered with **React 19**, **V
 
 | Project | Type | Description | Key Tech Stack |
 | :--- | :--- | :--- | :--- |
-| **[StrayCare](https://github.com/TeamTechForge)** | Team Project (TeamTechForge) | Monorepo animal rescue ecosystem featuring multi-step reporting, React Native Maps live tracking, rescuer case lifecycle management, adoption handoff prefilling, and Expo push alerts. | React Native, Expo, Node.js, Express, MongoDB, Socket.IO, Google Maps API |
+| **[StrayCare](https://github.com/TeamTechForge)** | Team Project | Monorepo animal rescue ecosystem featuring multi-step reporting, React Native Maps live tracking, rescuer case lifecycle management, adoption handoff prefilling, and Expo push alerts. | React Native, Expo, Node.js, Express, MongoDB, Socket.IO, Google Maps API |
 | **[MyBlog](https://github.com/YenuliMunasinghe/myblog)** | Individual Project | Security-hardened publishing platform engineered with CSRF token defense, HMAC SHA-256 Remember-Me signatures, non-blocking AJAX liking, and glassmorphic UI. | PHP (PDO), MySQL, JavaScript, AJAX, CSS Glassmorphism, Markdown |
-| **Smart Server Room Monitor** | Academic Systems Project | Industrial IoT environmental automation tracking temperature, humidity, and AC status via ESP32 dual LDR ADC and SGP30 I²C sensors with ThingSpeak telemetry and Firebase-hosted dashboard. | ESP32, C++, SGP30 (I²C), LDR (ADC), ThingSpeak, Firebase Hosting & Auth |
+| **[FinFlow](https://github.com/YenuliMunasinghe/FinFlow)** | Individual Project | Auditable financial management and accounting platform for university societies with categorized budgeting, real-time variance calculations, multi-role approval governance, and interactive Recharts intelligence. | Next.js 15, React, TypeScript, NestJS, Prisma ORM, MS SQL Server, Tailwind CSS, Recharts |
+| **Smart Server Room Monitor** | Team Project | Industrial IoT environmental automation tracking temperature, humidity, and AC status via ESP32 dual LDR ADC and SGP30 I²C sensors with ThingSpeak telemetry and Firebase-hosted dashboard. | ESP32, C++, SGP30 (I²C), LDR (ADC), ThingSpeak, Firebase Hosting & Auth |
 
 ---
 
