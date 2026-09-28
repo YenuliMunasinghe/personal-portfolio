@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Sparkles, ArrowRight, FolderGit2 } from 'lucide-react';
+import { Github, Sparkles, ArrowRight, FolderGit2, Users, User } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 
@@ -65,6 +65,23 @@ export default function Projects() {
                         Featured
                       </span>
                     )}
+
+                    {/* Project Type Badge */}
+                    {project.projectType && (
+                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-zinc-300">
+                        {project.projectType.toLowerCase().includes('team') ? (
+                          <>
+                            <Users className="w-3 h-3 text-blue-400" />
+                            <span>Team Project</span>
+                          </>
+                        ) : (
+                          <>
+                            <User className="w-3 h-3 text-emerald-400" />
+                            <span>Individual Project</span>
+                          </>
+                        )}
+                      </span>
+                    )}
                   </div>
                 )}
 
@@ -82,7 +99,12 @@ export default function Projects() {
                 {project.contributions && project.contributions.length > 0 && (
                   <div className="mt-3 flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                    <span>{project.contributions.length} architectural contributions</span>
+                    <span>
+                      {project.contributions.length}{' '}
+                      {project.projectType?.toLowerCase().includes('team')
+                        ? 'architectural contributions'
+                        : 'key system capabilities'}
+                    </span>
                   </div>
                 )}
 

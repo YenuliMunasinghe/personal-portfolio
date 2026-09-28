@@ -13,7 +13,9 @@ import {
   ShieldAlert,
   Radio,
   CheckCircle2,
-  Users
+  Users,
+  User,
+  CircleDollarSign
 } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
@@ -37,16 +39,19 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null;
 
+  const isTeamProject = project.projectType?.toLowerCase().includes('team');
+
   const getContribIcon = (title) => {
     const t = title.toLowerCase();
+    if (t.includes('finance') || t.includes('budget') || t.includes('ledger') || t.includes('accounting')) return <CircleDollarSign className="text-blue-400 w-4 h-4" />;
     if (t.includes('map') || t.includes('geospatial') || t.includes('location')) return <MapPin className="text-blue-400 w-4 h-4" />;
     if (t.includes('database') || t.includes('query') || t.includes('api') || t.includes('backend')) return <Database className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dispatch') || t.includes('real-time') || t.includes('telemetry') || t.includes('firmware') || t.includes('engine') || t.includes('ldr') || t.includes('sgp30') || t.includes('sensor')) return <Zap className="text-blue-400 w-4 h-4" />;
-    if (t.includes('dashboard') || t.includes('visualization') || t.includes('ui') || t.includes('glassmorphic') || t.includes('hosting') || t.includes('front-end')) return <Layout className="text-blue-400 w-4 h-4" />;
+    if (t.includes('dispatch') || t.includes('real-time') || t.includes('telemetry') || t.includes('firmware') || t.includes('engine') || t.includes('ldr') || t.includes('sgp30') || t.includes('sensor') || t.includes('variance')) return <Zap className="text-blue-400 w-4 h-4" />;
+    if (t.includes('dashboard') || t.includes('visualization') || t.includes('ui') || t.includes('glassmorphic') || t.includes('hosting') || t.includes('front-end') || t.includes('analytics')) return <Layout className="text-blue-400 w-4 h-4" />;
     if (t.includes('embedded') || t.includes('fail-safe') || t.includes('hardware')) return <Cpu className="text-blue-400 w-4 h-4" />;
-    if (t.includes('security') || t.includes('auth') || t.includes('hardening') || t.includes('permission') || t.includes('login') || t.includes('csrf')) return <ShieldAlert className="text-blue-400 w-4 h-4" />;
+    if (t.includes('security') || t.includes('auth') || t.includes('hardening') || t.includes('permission') || t.includes('login') || t.includes('csrf') || t.includes('governance')) return <ShieldAlert className="text-blue-400 w-4 h-4" />;
     if (t.includes('notification') || t.includes('push') || t.includes('alert')) return <Radio className="text-blue-400 w-4 h-4" />;
-    if (t.includes('rescuer') || t.includes('case') || t.includes('adoption')) return <CheckCircle2 className="text-blue-400 w-4 h-4" />;
+    if (t.includes('rescuer') || t.includes('case') || t.includes('adoption') || t.includes('planning')) return <CheckCircle2 className="text-blue-400 w-4 h-4" />;
     return <Sparkles className="text-blue-400 w-4 h-4" />;
   };
 
@@ -77,7 +82,11 @@ export default function ProjectModal({ project, onClose }) {
             </span>
             {project.projectType && (
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
-                <Users className="w-2.5 h-2.5 text-zinc-400" />
+                {isTeamProject ? (
+                  <Users className="w-2.5 h-2.5 text-blue-400" />
+                ) : (
+                  <User className="w-2.5 h-2.5 text-emerald-400" />
+                )}
                 {project.projectType}
               </span>
             )}
@@ -123,13 +132,13 @@ export default function ProjectModal({ project, onClose }) {
               </p>
             </div>
 
-            {/* My Contribution Summary Callout */}
+            {/* My Contribution / Scope Summary Callout */}
             {project.myContributionSummary && (
               <div className="rounded-xl bg-blue-500/[0.04] border border-blue-500/20 p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <Sparkles className="w-4 h-4 text-blue-400" />
                   <span className="text-xs font-mono font-semibold text-blue-300 uppercase tracking-wider">
-                    My Core Contribution
+                    {isTeamProject ? "My Core Contribution" : "Project Scope & Implementation"}
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-light">
@@ -138,11 +147,11 @@ export default function ProjectModal({ project, onClose }) {
               </div>
             )}
 
-            {/* Detailed Contributions Grid */}
+            {/* Detailed Contributions / Features Grid */}
             <div className="space-y-3">
               <h4 className="text-[11px] font-mono uppercase tracking-wider text-blue-400 flex items-center gap-1.5 font-semibold">
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                Key Architectural Contributions
+                {isTeamProject ? "Key Architectural Contributions" : "Key Architectural Features"}
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {project.contributions.map((contrib, idx) => (

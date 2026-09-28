@@ -91,7 +91,6 @@ export default function Writing() {
                       <span className="text-blue-300 font-semibold uppercase tracking-wider">
                         Daily DevLogs & Chapters
                       </span>
-                      <span className="text-zinc-500">{article.episodes.length} Published Entries</span>
                     </div>
 
                     <div className="grid gap-2 sm:grid-cols-3">

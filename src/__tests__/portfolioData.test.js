@@ -39,11 +39,18 @@ describe('portfolioData integrity tests', () => {
     });
   });
 
-  it('should contain education and certification items', () => {
+  it('should contain education and certification items with images', () => {
     expect(Array.isArray(educationData)).toBe(true);
     expect(educationData.length).toBeGreaterThan(0);
     expect(Array.isArray(certificationsData)).toBe(true);
     expect(certificationsData.length).toBeGreaterThan(0);
+    certificationsData.forEach((cert) => {
+      expect(cert.title).toBeDefined();
+      expect(cert.provider).toBeDefined();
+      expect(cert.image).toBeDefined();
+      expect(cert.image).toMatch(/^\/certificates\//);
+      expect(cert.link).toBeUndefined();
+    });
   });
 
   it('should contain articles, competitions, and volunteering datasets', () => {

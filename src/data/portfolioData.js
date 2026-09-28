@@ -43,7 +43,7 @@ export const projectsData = [
     id: "straycare",
     title: "StrayCare — Stray Animal Reporting & Live Tracking Platform",
     category: "Full Stack & Mobile",
-    projectType: "Team Project (TeamTechForge)",
+    projectType: "Team Project",
     shortDescription: "A comprehensive rescue ecosystem with React Native mobile app, web admin dashboard, and REST API connecting reporters, volunteers, and shelters for live map-based stray reporting and rescue operations.",
     fullDescription: "StrayCare is an end-to-end community rescue and dispatch platform that creates a connected rescue-case lifecycle—from initial stray animal reporting and interactive map discovery to rescue acceptance, structured status management, adoption handoff, and real-time reporter notifications. I was primarily responsible for the design and implementation of the Stray Reporting, Map-Based Rescue Operation, Rescuer Case Management, Adoption Handoff, and Notification modules across both mobile frontend and backend APIs.",
     myContributionSummary: "Spearheaded the design and implementation of 5 core modules: multi-step mobile reporting with anonymous submission, interactive map-based rescue discovery with status markers, rescuer case management with lifecycle progression, automated adoption handoff with form prefilling, and an end-to-end in-app/push notification system.",
@@ -112,10 +112,42 @@ export const projectsData = [
     featured: true
   },
   {
+    id: "finflow",
+    title: "FinFlow — Society Accounting & Financial Management System",
+    category: "Full Stack & FinTech",
+    projectType: "Individual Project",
+    shortDescription: "An auditable, event-driven financial management and accounting platform for university societies and clubs to plan categorized budgets, validate real-time spending variances, process multi-tier approvals, and analyze financial reports.",
+    fullDescription: "FinFlow is an auditable, enterprise-grade financial management and accounting system engineered for university societies, associations, and clubs to Plan, Track, Approve, and Analyze financial operations. It addresses the chaos of informal committee accounting by enforcing pre-event categorized budgeting, real-time variance calculations against active baselines, multi-role transaction approval workflows (Admin, President, Treasurer, Committee Member), Cloudinary receipt management, and authoritative double-entry posted accounting with interactive Recharts financial intelligence.",
+    myContributionSummary: "Architected and built the full-stack platform: NestJS modular REST API with Prisma ORM and Microsoft SQL Server (DECIMAL precision, atomic transactions), JWT/Bcrypt RBAC governance, Next.js 15 App Router frontend with Tailwind CSS, real-time budget variance engine, and Recharts analytics dashboards.",
+    tags: ["Next.js 15", "React", "TypeScript", "NestJS", "Node.js", "Prisma ORM", "MS SQL Server", "Tailwind CSS", "Recharts", "JWT / RBAC", "Cloudinary"],
+    contributions: [
+      {
+        title: "Event Planning & Categorized Budgeting Baseline",
+        detail: "Engineered multi-category revenue and expense budgeting (Food, Venue, Equipment, Transport, Printing) with pre-event review and President baseline approval before active spend tracking commences."
+      },
+      {
+        title: "Real-Time Spending Variance & Impact Engine",
+        detail: "Developed an automated validation engine computing projected spending and remaining budget variance in real-time during transaction creation, raising strict warnings and requiring explicit justification for over-budget overrides."
+      },
+      {
+        title: "Multi-Tier Role Governance & Approval Workflow",
+        detail: "Implemented robust RBAC (ADMIN, PRESIDENT, TREASURER, COMMITTEE_MEMBER) with JWT authentication and guards, enforcing dual-signoff policies, preventing unauthorized self-approvals, and linking Cloudinary receipts directly to transaction audits."
+      },
+      {
+        title: "Authoritative Event-Driven Ledger & Analytics",
+        detail: "Designed transactional integrity in Microsoft SQL Server using Prisma ORM with strict DECIMAL(18,2) precision, ensuring only posted transactions alter balances, while generating interactive Recharts visual dashboards for society cash flows and event P&L."
+      }
+    ],
+    image: "/finflow.jpg",
+    liveUrl: "",
+    githubUrl: "https://github.com/YenuliMunasinghe/FinFlow",
+    featured: true
+  },
+  {
     id: "server-room-monitor",
     title: "Smart Server Room Monitoring & Automation System",
     category: "IoT & Full Stack",
-    projectType: "Academic Systems Project",
+    projectType: "Team Project",
     shortDescription: "An automated server room monitoring system tracking temperature, humidity, and AC status in real-time via ESP32, ThingSpeak cloud telemetry, and a Firebase-hosted web dashboard.",
     fullDescription: "The Server Room Monitoring System addresses the critical need for efficient and automated monitoring of server room conditions. This system is designed to track temperature, humidity, and server status in real-time, providing alerts and updates via a web interface and SMS notifications. Additionally, it automates air conditioning schedules to optimize energy usage and ensure system reliability. By leveraging a microcontroller-based design with cost-effective components, our solution enhances server room management and reduces manual intervention.",
     myContributionSummary: "Directly programmed the dual LDR sensors (GPIO36/GPIO39) and SGP30 air quality sensor (I²C) on the ESP32, transmitted telemetry to ThingSpeak, built and hosted the front-end dashboard on Firebase Hosting, and implemented Firebase Authentication.",
@@ -168,16 +200,22 @@ export const educationData = [
 
 export const certificationsData = [
   {
+    title: "AWS Cloud Practitioner Essentials",
+    provider: "AWS Training & Certification",
+    date: "Completed: September 25, 2026",
+    image: "/certificates/aws-cloud-practitioner-essentials.png"
+  },
+  {
     title: "SQL Window Functions for Analytics",
     provider: "Coursera",
-    date: "Issued: May 2026",
-    link: "https://www.coursera.org/"
+    date: "Issued: May 27, 2026",
+    image: "/certificates/sql-window-functions-for-analytics.png"
   },
   {
     title: "What is Data Science?",
     provider: "IBM via Coursera",
-    date: "Issued: May 2026",
-    link: "https://www.coursera.org/"
+    date: "Issued: May 24, 2026",
+    image: "/certificates/what-is-data-science.png"
   }
 ];
 
