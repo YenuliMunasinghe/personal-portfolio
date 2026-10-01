@@ -113,7 +113,7 @@ export const projectsData = [
   },
   {
     id: "finflow",
-    title: "FinFlow — Society Accounting & Financial Management System",
+    title: "FinFlow — Society Financial Management Prototype",
     category: "Full Stack & FinTech",
     projectType: "Individual Project",
     shortDescription: "A full-stack financial management prototype for university societies and clubs, supporting event budgeting, income and expense tracking, role-based transaction approval, audit-log foundations, and financial dashboard visualizations.",
