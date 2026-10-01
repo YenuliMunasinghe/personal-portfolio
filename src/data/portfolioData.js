@@ -30,7 +30,7 @@ export const skillsData = [
   },
   {
     category: "Databases & Cloud",
-    skills: ["MongoDB", "MySQL", "SQLite", "Firebase (Authentication, Hosting)", "ThingSpeak"]
+    skills: ["MongoDB", "MySQL", "PostgreSQL", "Supabase", "SQLite", "Firebase (Authentication, Hosting)", "ThingSpeak"]
   },
   {
     category: "Core Domains",
@@ -116,26 +116,26 @@ export const projectsData = [
     title: "FinFlow — Society Accounting & Financial Management System",
     category: "Full Stack & FinTech",
     projectType: "Individual Project",
-    shortDescription: "An auditable, event-driven financial management and accounting platform for university societies and clubs to plan categorized budgets, validate real-time spending variances, process multi-tier approvals, and analyze financial reports.",
-    fullDescription: "FinFlow is an auditable, enterprise-grade financial management and accounting system engineered for university societies, associations, and clubs to Plan, Track, Approve, and Analyze financial operations. It addresses the chaos of informal committee accounting by enforcing pre-event categorized budgeting, real-time variance calculations against active baselines, multi-role transaction approval workflows (Admin, President, Treasurer, Committee Member), Cloudinary receipt management, and authoritative double-entry posted accounting with interactive Recharts financial intelligence.",
-    myContributionSummary: "Architected and built the full-stack platform: NestJS modular REST API with Prisma ORM and Microsoft SQL Server (DECIMAL precision, atomic transactions), JWT/Bcrypt RBAC governance, Next.js 15 App Router frontend with Tailwind CSS, real-time budget variance engine, and Recharts analytics dashboards.",
-    tags: ["Next.js 15", "React", "TypeScript", "NestJS", "Node.js", "Prisma ORM", "MS SQL Server", "Tailwind CSS", "Recharts", "JWT / RBAC", "Cloudinary"],
+    shortDescription: "A full-stack financial management prototype for university societies and clubs, supporting event budgeting, income and expense tracking, role-based transaction approval, audit-log foundations, and financial dashboard visualizations.",
+    fullDescription: "FinFlow is a full-stack financial management prototype designed for university societies and clubs. It provides foundations for event budgeting, income and expense tracking, transaction review, role-based approval, financial reporting, and audit history. The project uses Next.js 16, React, TypeScript, NestJS, Prisma, and Supabase PostgreSQL, with JWT-based authentication and President-restricted transaction approvals. Some advanced capabilities—including automated budget-variance enforcement, complete audit integration, receipt storage, and formal accounting-ledger support—remain under development.",
+    myContributionSummary: "Designed and developed a full-stack prototype using a NestJS REST API, Prisma ORM, Supabase PostgreSQL, JWT authentication, and a Next.js 16 frontend. The system models users, events, categorized budgets, transactions, financial reports, and audit records, with President-restricted transaction approval and responsive financial dashboard interfaces.",
+    tags: ["Next.js 16", "React 19", "TypeScript", "NestJS", "Node.js", "Prisma ORM", "PostgreSQL", "Supabase", "Tailwind CSS 4", "Recharts", "JWT", "Bcrypt"],
     contributions: [
       {
-        title: "Event Planning & Categorized Budgeting Baseline",
-        detail: "Engineered multi-category revenue and expense budgeting (Food, Venue, Equipment, Transport, Printing) with pre-event review and President baseline approval before active spend tracking commences."
+        title: "Event Budgeting",
+        detail: "Modeled society events, budget categories, and individual budget items with monetary values stored using fixed decimal precision."
       },
       {
-        title: "Real-Time Spending Variance & Impact Engine",
-        detail: "Developed an automated validation engine computing projected spending and remaining budget variance in real-time during transaction creation, raising strict warnings and requiring explicit justification for over-budget overrides."
+        title: "Budget Monitoring",
+        detail: "Designed transaction-to-event and budget-item relationships to support planned-versus-actual spending analysis. The current prototype includes UI indicators and data fields for over-budget transactions, with automated variance enforcement planned for further development."
       },
       {
-        title: "Multi-Tier Role Governance & Approval Workflow",
-        detail: "Implemented robust RBAC (ADMIN, PRESIDENT, TREASURER, COMMITTEE_MEMBER) with JWT authentication and guards, enforcing dual-signoff policies, preventing unauthorized self-approvals, and linking Cloudinary receipts directly to transaction audits."
+        title: "Role-Based Approval",
+        detail: "Implemented JWT authentication and NestJS role guards, including a President-restricted endpoint for approving, rejecting, or requesting revisions to transactions."
       },
       {
-        title: "Authoritative Event-Driven Ledger & Analytics",
-        detail: "Designed transactional integrity in Microsoft SQL Server using Prisma ORM with strict DECIMAL(18,2) precision, ensuring only posted transactions alter balances, while generating interactive Recharts visual dashboards for society cash flows and event P&L."
+        title: "Reporting and Audit Foundations",
+        detail: "Built financial summary, reporting, chart, and audit-log interfaces, with backend models and services for approved-transaction reporting and activity records. Further integration is planned to connect every workflow action to persistent reports and audit entries."
       }
     ],
     image: "/finflow.jpg",
@@ -226,7 +226,7 @@ export const articlesData = [
     id: "finflow-dev-series",
     title: "Building FinFlow: Daily Development Series",
     category: "DevLog Series",
-    description: "An ongoing daily series chronicling the system architecture, full-stack milestones, and real-time engineering decisions while developing the FinFlow platform.",
+    description: "A nine-part development series documenting FinFlow’s architecture, implementation decisions, challenges, cloud migration, and authentication work.",
     readTime: "Multi-part Series",
     tags: ["FinFlow", "Daily DevLog", "System Design", "Full-Stack"],
     link: "https://medium.com/@yenulimunasinghe04",
@@ -239,13 +239,43 @@ export const articlesData = [
       },
       {
         day: "Day 02",
-        title: "Database Design & Backend Service Integration",
+        title: "Designing the Database and Security Foundation",
         link: "https://medium.com/@yenulimunasinghe04/day-2-designing-the-database-and-security-foundation-0d0581df8553",
       },
       {
         day: "Day 03",
-        title: "Frontend UI, State Workflows & Sprint Reflections",
+        title: "Connecting Events, Budgets and Transactions",
         link: "https://medium.com/@yenulimunasinghe04/day-3-connecting-events-budgets-and-transactions-39331f7b5be5",
+      },
+      {
+        day: "Day 04",
+        title: "Working on Approvals and Audit Logging",
+        link: "https://medium.com/@yenulimunasinghe04/day-4-working-on-approvals-and-audit-logging-19a3cc04238c",
+      },
+      {
+        day: "Day 05",
+        title: "Turning Financial Data into Useful Information",
+        link: "https://medium.com/@yenulimunasinghe04/day-5-turning-financial-data-into-useful-information-d7a41deccfec",
+      },
+      {
+        day: "Day 06",
+        title: "Taking FinFlow Beyond Localhost",
+        link: "https://medium.com/@yenulimunasinghe04/day-6-taking-finflow-beyond-localhost-095320adb4dc",
+      },
+      {
+        day: "Day 07",
+        title: "Moving FinFlow to the Cloud",
+        link: "https://medium.com/@yenulimunasinghe04/day-7-moving-finflow-to-the-cloud-d52bd5cb1a67",
+      },
+      {
+        day: "Day 08",
+        title: "Hardening Authentication and Route Protection",
+        link: "https://medium.com/@yenulimunasinghe04/day-8-hardening-authentication-and-route-protection-0fec2704a51b",
+      },
+      {
+        day: "Day 09",
+        title: "Bringing FinFlow Together",
+        link: "https://medium.com/@yenulimunasinghe04/day-9-bringing-finflow-together-1ebc6b448374",
       }
     ]
   }
