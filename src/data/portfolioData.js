@@ -182,7 +182,7 @@ export const educationData = [
     degree: "Bachelor of Science (Hons) in Information Technology and Management",
     institution: "University of Moratuwa, Sri Lanka",
     period: "2024 – Present",
-    details: "Third Year"
+    details: "Third Year | Current SGPA - 3.6/4.0 "
   },
   {
     degree: "Diploma in Information Technology",
