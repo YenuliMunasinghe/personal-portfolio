@@ -50,6 +50,14 @@ describe('portfolioData integrity tests', () => {
     expect(aiFeature?.status).toBe('In Progress');
   });
 
+  it('should include live demo URLs for FinFlow and MyBlog', () => {
+    const finflow = projectsData.find((project) => project.id === 'finflow');
+    const myblog = projectsData.find((project) => project.id === 'myblog');
+
+    expect(finflow?.liveUrl).toBe('https://fin-flow-coral-seven.vercel.app');
+    expect(myblog?.liveUrl).toBe('https://myblog-forwho.lovestoblog.com/');
+  });
+
   it('should contain education and certification items with images', () => {
     expect(Array.isArray(educationData)).toBe(true);
     expect(educationData.length).toBeGreaterThan(0);

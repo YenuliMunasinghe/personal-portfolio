@@ -32,6 +32,19 @@ describe('App Component', () => {
     expect(screen.getByText('In Progress')).toBeInTheDocument();
   });
 
+  it('links the FinFlow and MyBlog project cards to their live demos', () => {
+    render(<App />);
+
+    expect(screen.getByRole('link', { name: /Live demo for FinFlow/i })).toHaveAttribute(
+      'href',
+      'https://fin-flow-coral-seven.vercel.app'
+    );
+    expect(screen.getByRole('link', { name: /Live demo for MyBlog/i })).toHaveAttribute(
+      'href',
+      'https://myblog-forwho.lovestoblog.com/'
+    );
+  });
+
   it('renders project cards with view more buttons and opens detailed modal on click', () => {
     render(<App />);
 

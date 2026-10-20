@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Sparkles, ArrowRight, FolderGit2, Users, User, Clock3 } from 'lucide-react';
+import { Github, Sparkles, ArrowRight, FolderGit2, Users, User, Clock3, ExternalLink } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 
@@ -66,29 +66,32 @@ export default function Projects() {
                       </span>
                     )}
 
-                    {/* Project Type Badge */}
-                    {project.projectType && (
-                      <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-black/85 backdrop-blur-md border border-white/10 text-[10px] font-mono text-zinc-300">
-                        {project.projectType.toLowerCase().includes('team') ? (
-                          <>
-                            <Users className="w-3 h-3 text-blue-400" />
-                            <span>Team Project</span>
-                          </>
-                        ) : (
-                          <>
-                            <User className="w-3 h-3 text-emerald-400" />
-                            <span>Individual Project</span>
-                          </>
+                    {/* Project metadata badges share one wrapping layout to avoid overlap */}
+                    {(project.projectType || project.status) && (
+                      <div className="absolute inset-x-3 bottom-3 flex flex-wrap items-center gap-1.5">
+                        {project.projectType && (
+                          <span className="inline-flex max-w-full items-center gap-1.5 rounded-md border border-white/10 bg-black/85 px-2.5 py-1 text-[10px] font-mono text-zinc-300 backdrop-blur-md">
+                            {project.projectType.toLowerCase().includes('team') ? (
+                              <>
+                                <Users className="w-3 h-3 shrink-0 text-blue-400" />
+                                <span>Team Project</span>
+                              </>
+                            ) : (
+                              <>
+                                <User className="w-3 h-3 shrink-0 text-emerald-400" />
+                                <span>Individual Project</span>
+                              </>
+                            )}
+                          </span>
                         )}
-                      </span>
-                    )}
 
-                    {/* Development Status Badge */}
-                    {project.status && (
-                      <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-500/15 backdrop-blur-md border border-amber-400/30 text-[10px] font-mono text-amber-200">
-                        <Clock3 className="w-3 h-3 text-amber-300" />
-                        {project.status}
-                      </span>
+                        {project.status && (
+                          <span className="inline-flex max-w-full items-center gap-1.5 rounded-md border border-amber-400/30 bg-amber-500/15 px-2.5 py-1 text-[10px] font-mono text-amber-200 backdrop-blur-md">
+                            <Clock3 className="w-3 h-3 shrink-0 text-amber-300" />
+                            <span>{project.status}</span>
+                          </span>
+                        )}
+                      </div>
                     )}
                   </div>
                 )}
@@ -149,19 +152,36 @@ export default function Projects() {
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </button>
 
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
-                    title="View GitHub Repository"
-                    aria-label={`GitHub Repository for ${project.title}`}
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
-                )}
+                <div className="flex items-center gap-2">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-blue-500/20 bg-blue-500/10 px-2.5 py-1.5 text-[11px] font-mono text-blue-300 transition-colors hover:border-blue-400/40 hover:bg-blue-500/20 hover:text-white"
+                      title={`Open live demo for ${project.title}`}
+                      aria-label={`Live demo for ${project.title}`}
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      <span>Demo</span>
+                    </a>
+                  )}
+
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+                      title="View GitHub Repository"
+                      aria-label={`GitHub Repository for ${project.title}`}
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

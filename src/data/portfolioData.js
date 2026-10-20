@@ -107,7 +107,7 @@ export const projectsData = [
       }
     ],
     image: "/myblog.png",
-    liveUrl: "",
+    liveUrl: "https://myblog-forwho.lovestoblog.com/",
     githubUrl: "https://github.com/YenuliMunasinghe/myblog",
     featured: true
   },
@@ -145,7 +145,7 @@ export const projectsData = [
       }
     ],
     image: "/finflow.jpg",
-    liveUrl: "",
+    liveUrl: "https://fin-flow-coral-seven.vercel.app",
     githubUrl: "https://github.com/YenuliMunasinghe/FinFlow",
     featured: true
   },
