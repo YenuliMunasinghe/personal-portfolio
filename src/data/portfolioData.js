@@ -116,10 +116,11 @@ export const projectsData = [
     title: "FinFlow — Society Financial Management Prototype",
     category: "Full Stack & FinTech",
     projectType: "Individual Project",
-    shortDescription: "A full-stack financial management prototype for university societies and clubs, supporting event budgeting, income and expense tracking, role-based transaction approval, audit-log foundations, and financial dashboard visualizations.",
-    fullDescription: "FinFlow is a full-stack financial management prototype designed for university societies and clubs. It provides foundations for event budgeting, income and expense tracking, transaction review, role-based approval, financial reporting, and audit history. The project uses Next.js 16, React, TypeScript, NestJS, Prisma, and Supabase PostgreSQL, with JWT-based authentication and President-restricted transaction approvals. Some advanced capabilities—including automated budget-variance enforcement, complete audit integration, receipt storage, and formal accounting-ledger support—remain under development.",
-    myContributionSummary: "Designed and developed a full-stack prototype using a NestJS REST API, Prisma ORM, Supabase PostgreSQL, JWT authentication, and a Next.js 16 frontend. The system models users, events, categorized budgets, transactions, financial reports, and audit records, with President-restricted transaction approval and responsive financial dashboard interfaces.",
-    tags: ["Next.js 16", "React 19", "TypeScript", "NestJS", "Node.js", "Prisma ORM", "PostgreSQL", "Supabase", "Tailwind CSS 4", "Recharts", "JWT", "Bcrypt"],
+    status: "Ongoing Enhancement",
+    shortDescription: "A full-stack financial management prototype for university societies and clubs, covering event budgets, income and expense transactions, President-restricted review, reporting and audit foundations, with an AI-powered Financial Insight Generator in progress.",
+    fullDescription: "FinFlow is an event-centric, full-stack financial management prototype for university societies and clubs. It models society events, categorized budgets, income and expense transactions, approval workflows, financial reports, and audit records, with JWT authentication, NestJS role guards, and President-restricted transaction review. Ongoing enhancement includes an AI-powered Financial Insight Generator being integrated with Gemini API and structured outputs to analyze event budgets, identify spending patterns, and generate actionable financial recommendations.",
+    myContributionSummary: "Designed and developed the full-stack prototype using a NestJS REST API, Prisma ORM, Supabase PostgreSQL, JWT authentication, and a Next.js 16 frontend. Modeled monetary data with fixed decimal precision and built responsive dashboards for financial summaries and planned-versus-actual analysis.",
+    tags: ["Next.js 16", "React 19", "TypeScript", "NestJS", "Node.js", "Prisma ORM", "PostgreSQL", "Supabase", "Tailwind CSS 4", "Recharts", "JWT", "Bcrypt", "Gemini API", "Google Gen AI SDK", "Zod", "Structured Outputs"],
     contributions: [
       {
         title: "Event Budgeting",
@@ -136,6 +137,11 @@ export const projectsData = [
       {
         title: "Reporting and Audit Foundations",
         detail: "Built financial summary, reporting, chart, and audit-log interfaces, with backend models and services for approved-transaction reporting and activity records. Further integration is planned to connect every workflow action to persistent reports and audit entries."
+      },
+      {
+        title: "AI-Powered Financial Insight Generator",
+        status: "In Progress",
+        detail: "Integrating Gemini API through the Google Gen AI SDK, with Zod-validated structured outputs, to analyze event budgets, identify spending patterns, and generate actionable financial recommendations."
       }
     ],
     image: "/finflow.jpg",

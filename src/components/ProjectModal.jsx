@@ -15,7 +15,8 @@ import {
   CheckCircle2,
   Users,
   User,
-  CircleDollarSign
+  CircleDollarSign,
+  Clock3
 } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
@@ -96,6 +97,12 @@ export default function ProjectModal({ project, onClose }) {
                 Featured
               </span>
             )}
+            {project.status && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/25 text-[10px] font-mono text-amber-200">
+                <Clock3 className="w-2.5 h-2.5 text-amber-300" />
+                {project.status}
+              </span>
+            )}
           </div>
 
           <button
@@ -163,7 +170,15 @@ export default function ProjectModal({ project, onClose }) {
                       {getContribIcon(contrib.title)}
                     </div>
                     <div>
-                      <p className="text-xs font-semibold text-white font-mono">{contrib.title}</p>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <p className="text-xs font-semibold text-white font-mono">{contrib.title}</p>
+                        {contrib.status && (
+                          <span className="inline-flex items-center gap-1 rounded-full border border-amber-400/25 bg-amber-500/10 px-2 py-0.5 text-[9px] font-mono uppercase tracking-wide text-amber-200">
+                            <Clock3 className="h-2.5 w-2.5 text-amber-300" />
+                            {contrib.status}
+                          </span>
+                        )}
+                      </div>
                       <p className="mt-1 text-xs text-zinc-400 font-light leading-relaxed">{contrib.detail}</p>
                     </div>
                   </div>

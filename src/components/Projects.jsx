@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Sparkles, ArrowRight, FolderGit2, Users, User } from 'lucide-react';
+import { Github, Sparkles, ArrowRight, FolderGit2, Users, User, Clock3 } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
 import ProjectModal from './ProjectModal';
 
@@ -80,6 +80,14 @@ export default function Projects() {
                             <span>Individual Project</span>
                           </>
                         )}
+                      </span>
+                    )}
+
+                    {/* Development Status Badge */}
+                    {project.status && (
+                      <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-500/15 backdrop-blur-md border border-amber-400/30 text-[10px] font-mono text-amber-200">
+                        <Clock3 className="w-3 h-3 text-amber-300" />
+                        {project.status}
                       </span>
                     )}
                   </div>

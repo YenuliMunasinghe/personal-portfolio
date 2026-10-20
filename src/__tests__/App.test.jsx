@@ -13,10 +13,23 @@ describe('App Component', () => {
   it('renders key section headings and project details', () => {
     render(<App />);
     expect(screen.getByText(/A detailed look at my systems projects and contributions/i)).toBeInTheDocument();
-    expect(screen.getByText(/FinFlow — Society Accounting & Financial Management System/i)).toBeInTheDocument();
+    expect(screen.getByText(/FinFlow — Society Financial Management Prototype/i)).toBeInTheDocument();
     expect(screen.getByText(/StrayCare — Stray Animal Reporting & Live Tracking Platform/i)).toBeInTheDocument();
     expect(screen.getByText(/Writing & Thoughts/i)).toBeInTheDocument();
     expect(screen.getByText(/Competitions & Volunteering/i)).toBeInTheDocument();
+  });
+
+  it('shows FinFlow enhancement and AI implementation statuses', () => {
+    render(<App />);
+
+    expect(screen.getByText('Ongoing Enhancement')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: /View more details about FinFlow/i }));
+
+    expect(screen.getByRole('dialog')).toBeInTheDocument();
+    expect(screen.getAllByText('Ongoing Enhancement').length).toBeGreaterThan(0);
+    expect(screen.getByText('AI-Powered Financial Insight Generator')).toBeInTheDocument();
+    expect(screen.getByText('In Progress')).toBeInTheDocument();
   });
 
   it('renders project cards with view more buttons and opens detailed modal on click', () => {

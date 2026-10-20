@@ -39,6 +39,17 @@ describe('portfolioData integrity tests', () => {
     });
   });
 
+  it('should describe FinFlow as an ongoing enhancement with AI work in progress', () => {
+    const finflow = projectsData.find((project) => project.id === 'finflow');
+    const aiFeature = finflow?.contributions.find(
+      (contribution) => contribution.title === 'AI-Powered Financial Insight Generator'
+    );
+
+    expect(finflow?.status).toBe('Ongoing Enhancement');
+    expect(finflow?.tags).toEqual(expect.arrayContaining(['Gemini API', 'Google Gen AI SDK', 'Zod']));
+    expect(aiFeature?.status).toBe('In Progress');
+  });
+
   it('should contain education and certification items with images', () => {
     expect(Array.isArray(educationData)).toBe(true);
     expect(educationData.length).toBeGreaterThan(0);
