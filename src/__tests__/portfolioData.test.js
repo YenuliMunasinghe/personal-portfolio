@@ -8,6 +8,7 @@ import {
   articlesData,
   competitionsData,
   volunteeringData,
+  galleryData,
 } from '../data/portfolioData';
 
 describe('portfolioData integrity tests', () => {
@@ -93,6 +94,16 @@ describe('portfolioData integrity tests', () => {
     volunteeringData.forEach((vol) => {
       expect(vol.role).toBeDefined();
       expect(vol.organization).toBeDefined();
+    });
+  });
+
+  it('should contain six local competition and volunteering gallery images', () => {
+    expect(galleryData).toHaveLength(6);
+    galleryData.forEach((item) => {
+      expect(item.title).toBeDefined();
+      expect(item.category).toMatch(/Competition|Volunteering/);
+      expect(item.image).toMatch(/^\/gallery\/.+\.jpeg$/);
+      expect(item.alt).toBeDefined();
     });
   });
 });

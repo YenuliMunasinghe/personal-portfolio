@@ -98,8 +98,8 @@ export default function Hero() {
 
             {/* Tagline / Pitch */}
             <p className="text-sm sm:text-base text-zinc-300 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-              Building robust <span className="text-white font-medium">full-stack web & mobile solutions</span>,
-              scalable <span className="text-white font-medium">system architectures</span>, and bridging technology with core business strategy.
+              Combining <span className="text-white font-medium">software engineering</span>, full-stack web and mobile development,
+              and <span className="text-white font-medium">business thinking</span> to build reliable, scalable solutions that solve real-world problems.
             </p>
 
             {/* Quick Stat & CV Cards */}

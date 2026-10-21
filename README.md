@@ -40,6 +40,7 @@ An interactive, high-performance web portfolio engineered with **React 19**, **V
 - **🃏 Project Cards & Deep-Dive Modals**: Responsive 3-column card grid with visual banners, category badges, project types, and a **"View more →"** action opening a comprehensive modal view with architectural breakdowns and authentic hardware/UI imagery.
 - **✍️ Technical Writing & Series**: Dedicated section showcasing published Medium articles, daily devlogs, and system architecture breakdowns.
 - **🏆 Competitions & Volunteering Hub**: Filterable showcase tracking competitive hackathons, problem-solving sprints, and community leadership initiatives.
+- **📸 Experience Gallery**: Compact, responsive rotating photo widget for volunteering teams, event work, and competition highlights.
 - **📬 Working Contact Form**: Integrated with **Formspree** for direct-to-inbox message delivery, backed by a fail-safe `mailto:` client fallback.
 - **📱 100% Responsive Design**: Fluid grid and flexbox layouts crafted for mobile, tablet, laptop, and ultra-wide screens.
 - **🧪 Comprehensive Testing**: Robust unit and integration test suite using **Vitest** and **React Testing Library** with automated CI validation.
@@ -81,6 +82,7 @@ personal-portfolio/
 │       └── ci.yml                 # Automated CI Workflow (Lint, Test, Build)
 ├── public/
 │   ├── screenshots/               # Preview screenshots for documentation
+│   ├── gallery/                   # Volunteering and competition photographs
 │   ├── myblog.png                 # MyBlog landing page preview
 │   ├── server-room-monitor.jpg    # Server room IoT enclosure photo
 │   ├── profile.jpg                # Profile photo asset
@@ -99,6 +101,7 @@ personal-portfolio/
 │   │   ├── Contact.jsx            # Formspree-powered contact form & social handles
 │   │   ├── Experience.jsx         # Academic & professional milestones timeline
 │   │   ├── Footer.jsx             # Site footer & copyright
+│   │   ├── Gallery.jsx            # Compact rotating experience gallery
 │   │   ├── Hero.jsx               # Hero banner, terminal badge, and CTAs
 │   │   ├── Involvement.jsx        # Competitions, hackathons, and volunteering
 │   │   ├── Navbar.jsx             # Sticky glassmorphic navbar with mobile menu
@@ -222,6 +225,7 @@ All portfolio content is driven dynamically from [`src/data/portfolioData.js`](f
 3. **Engineering Projects**: Titles, short/full descriptions, my contribution summaries, tag arrays, and images.
 4. **Writing & DevLogs**: Articles, links, categories, and chapter/episode breakdowns.
 5. **Competitions & Volunteering**: Hackathon entries, awards, organizers, and leadership roles.
+6. **Experience Gallery**: Local photo assets, captions, categories, years, and accessible alternative text.
 
 ---
 

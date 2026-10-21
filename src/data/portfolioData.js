@@ -339,3 +339,61 @@ export const volunteeringData = [
   }
 ];
 
+// Photo highlights from competitions, volunteering, and event teams
+export const galleryData = [
+  {
+    id: "finc-2025-delegates-committee",
+    title: "FINC '25 Delegates Committee",
+    event: "Future Innovators Challenge 2025",
+    category: "Volunteering",
+    year: "2025",
+    image: "/gallery/finc-2025-delegates-committee.jpeg",
+    alt: "FINC 2025 delegates handling committee appreciation graphic featuring Yenuli Munasinghe"
+  },
+  {
+    id: "road-to-legacy-committee",
+    title: "Road to Legacy 2.0 Organizing Committee",
+    event: "Delegates Handling Team",
+    category: "Volunteering",
+    year: "2025",
+    image: "/gallery/road-to-legacy-committee.jpeg",
+    alt: "Road to Legacy 2.0 delegates handling organizing committee"
+  },
+  {
+    id: "coderush-2024",
+    title: "CodeRush 2024",
+    event: "Competitive coding experience",
+    category: "Competition",
+    year: "2024",
+    image: "/gallery/coderush-2024.jpeg",
+    alt: "Participants working at computers during CodeRush 2024"
+  },
+  {
+    id: "road-to-legacy-delegate-desk",
+    title: "Delegate Handling in Action",
+    event: "Road to Legacy 2.0",
+    category: "Volunteering",
+    year: "2025",
+    image: "/gallery/road-to-legacy-delegate-desk.jpeg",
+    alt: "Road to Legacy volunteers supporting attendees at the delegate handling desk"
+  },
+  {
+    id: "finc-2025-team",
+    title: "FINC '25 Organizing Team",
+    event: "Future Innovators Challenge 2025",
+    category: "Volunteering",
+    year: "2025",
+    image: "/gallery/finc-2025-team.jpeg",
+    alt: "FINC 2025 organizing team group photograph"
+  },
+  {
+    id: "road-to-legacy-portrait",
+    title: "Road to Legacy 2.0",
+    event: "Delegates Handling Team",
+    category: "Volunteering",
+    year: "2025",
+    image: "/gallery/road-to-legacy-portrait.jpeg",
+    alt: "Yenuli Munasinghe volunteering at Road to Legacy 2.0"
+  }
+];
+

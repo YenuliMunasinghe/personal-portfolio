@@ -8,6 +8,7 @@ import Writing from './components/Writing';
 import Experience from './components/Experience';
 import Certifications from './components/Certifications';
 import Involvement from './components/Involvement';
+import Gallery from './components/Gallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -30,6 +31,7 @@ export default function App() {
         <Experience />
         <Certifications />
         <Involvement />
+        <Gallery />
         <Contact />
       </main>
 

@@ -17,6 +17,15 @@ describe('App Component', () => {
     expect(screen.getByText(/StrayCare — Stray Animal Reporting & Live Tracking Platform/i)).toBeInTheDocument();
     expect(screen.getByText(/Writing & Thoughts/i)).toBeInTheDocument();
     expect(screen.getByText(/Competitions & Volunteering/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Gallery/i })).toBeInTheDocument();
+  });
+
+  it('renders the rotating gallery widget and supports manual navigation', () => {
+    render(<App />);
+
+    expect(screen.getByText("FINC '25 Delegates Committee")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /Next gallery image/i }));
+    expect(screen.getByText('Road to Legacy 2.0 Organizing Committee')).toBeInTheDocument();
   });
 
   it('shows FinFlow enhancement and AI implementation statuses', () => {
